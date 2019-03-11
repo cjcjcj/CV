@@ -3,169 +3,244 @@
 %--------------- includes ---------------------
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
-\usepackage[big]{layaureo}		% better formatting of the A4 page
-\usepackage{titlesec}			% custom \section
-\usepackage{hyperref}			% internal href
-\usepackage{tabularx}
-\usepackage[bottom]{footmisc}
+
+\usepackage[big]{layaureo}      % better formatting of the A4 page
+\usepackage{titlesec}           % custom \section
+\usepackage{hyperref}           % internal href
+\usepackage{fontawesome}        % linkedin and github logos
+\usepackage{ltablex}            % long tablesx
+\usepackage[bottom]{footmisc}   % footnontes
+\usepackage[usenames]{xcolor}   % custom coloring
+\usepackage{geometry}
 
 \usepackage[absolute]{textpos}
-\usepackage[usenames]{xcolor}
 
-%---------------- finetuning -----------------
-\pagestyle{empty}				% non-numbered pages
+%---------------- init -----------------
+\geometry{
+    a4paper,
+    bottom=2.4cm
+}
+% Colors
+\definecolor{linkcolor}{RGB}{66, 128, 184}
+\definecolor{linkedincolor}{RGB}{0, 119, 181}
 
+% Non-numbered pages
+\pagestyle{empty}               
+
+% Titles
 % CV Sections inspired by:
 % http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{5pt}{5pt}
+\titlespacing{\section}{0pt}{20pt}{10pt}
 
+% Links
+\hypersetup{colorlinks, breaklinks, urlcolor=linkcolor, linkcolor=linkcolor}
+
+% Text length, indents, etc
 \setlength{\TPHorizModule}{30mm}
 \setlength{\TPVertModule}{\TPHorizModule}
 \textblockorigin{2mm}{0.65\paperheight}
 \setlength{\parindent}{0pt}
 
-\definecolor{linkcolour}{rgb}{0.26, 0.5, 0.72}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+% Commands
+% colored linkedin
+\newcommand{\coloredFaLinkedinSquare}{\textcolor{linkedincolor}{\faLinkedinSquare}}
 
 %------------------------ CV -------------------------
+\title{\Huge{Aleksandr Ilin}}
+\date{}
 \begin{document}
-{\centering{\Huge Aleksandr Ilin}\par}
-
+\clearpage\maketitle
+\thispagestyle{empty}
+% {\centering  {\Huge Aleksandr Ilin}\par}
+% \vspace*{10mm} 
 
 %------------------- PERSONAL INFORMATION -------------------
 \section{Personal Information}
-\begin{tabularx}{\textwidth}{lX}
-	Date of Birth:	& December 23, 1992 \\
-	Address:		& Saint-Petersburg, Russia \\
-	Email:			& \href{mailto:alexander.ilin.92@gmail.com} {alexander.ilin.92@gmail.com} \\
-	Telegram:		& \href{https://t.me/sasha_ilin} {@sasha\_ilin} \\
-\end{tabularx}
-
-
-%------------------- TECHNICAL SKILLS -------------------
-\section{Technical Skills}
 \begin{tabular}{ll}
-	Programming Languages:	& Python3, C++, \{z,ba\}sh \\
-	Python Frameworks:		& Django, DRF, Flask, SQLAlchemy, scipy, pandas, sklearn \\
-	OS:						& Linux \\
-	VCS:					& Git, SVN \\
-	Other:					& Git-Flow, Docker, Design Patterns, UML, Scrum, Kanban
+    Date of Birth:  & December 23, 1992 \\
+    Address:        & Saint-Petersburg, Russia \\
+    Github:         & \faGithub\ \href{https://github.com/cjcjcj}{cjcjcj} \\
+    Linkedin:       & \coloredFaLinkedinSquare\ \href{https://www.linkedin.com/in/ailin/}{ailin} \\
+    Email:          & \href{mailto:alexander.ilin.92@gmail.com} {alexander.ilin.92@gmail.com}
 \end{tabular}
 
 
-%------------------- WORK EXPERIENCE -------------------
-\section{Work Experience}
-\textcolor{gray}{Total: 3 year 2 months} \\
+%------------------- SKILLS -------------------
+\section{Skills}
+\begin{tabular}{ll}
+    Programming Languages:  & Python, Golang, C++ \\
+    Technologies:           & Big Data(Spark, Hadoop), Highload, Parallel Programming \\
+    VCS:                    & Git, SVN \\
+    OS:                     & Linux \\
+    Other:                  & Docker, Git-Flow, Design Patterns, UML,\\
+                            & Agile(Scrum, Kanban, XP, TDD) \\
+\end{tabular}
+
+
+%------------------- ABOUT ME -------------------
+\section{About Me}
+\begin{tabular}{p{.95\linewidth}} % :<
+    Experienced developer with a strong background.\\
+    I have an inquisitive mind, constantly learning new things.\\
+    Having interest in parallel programming, BigData, agent modeling, interdisciplinary researches.\\
+     Following the principles: Unix Way, ABC, KISS, YAGNI, The Zen of Python.\\
+    Team player, love new challeges.\\
+\end{tabular}
+\newpage
+
+%------------------- EXPERIENCE -------------------
+\section{Experience}
+\textcolor{gray}{Total: 3 yrs 10 mos}
 \begin{tabularx}{\textwidth}{lX}
-	Jun 2016 -				&	Programmer \\
-	Present					&	\textbf{Luxoft}, Saint-Petersburg,
-								\href{www.luxoft.com}{www.luxoft.com} \\
-	\textcolor{gray}
-	{2 year}	
-							&	\footnotesize{
-									Leading a small project team (3 developers, 1 QA).\newline
-									Managing a project for the test automation framework development.\newline
-									Communication with the customer, scrum planning.\newline
-									Building a complicated distributed system: researches, implementation.\newline\newline
+    Sep 2018 -              &   \textbf{Data Engineer} \\
+    Mar 2019                &   \textbf{OSAHP}, Remote,
+                                \href{osahp.com}{osahp.com} \\
+    \textcolor{gray}
+    {6 mos}
+                            &   \footnotesize{
 
-									Redesigned existing solution:\newline
-									* reworked the system architecture;\newline
-									* optimized test algorithms;\newline
-									* integrated best deploying practices;\newline
-									* migrated from SVN to Git;\newline
-									* set up the development infrastructure and VCS usage best practises.\newline\newline
-									Stack: Python3.5, Django, DRF, Celery, RabbitMQ/Redis, PostgreSQL, bash, Ubuntu16+, Docker, Git, SVN.\newline
-								} \\
+                                    The product helps to reduce the number of sales losses, by alerting merchandiser about the absence of goods on the shop shelves.\newline
+                                    I was a part of Data Science team responsible for ML algorithms.\newline
 
-	\multicolumn{2}{c}{}\\
+                                    Responsibilities \& Achievements:\newline
+                                    * refactoring\newline
+                                    * transfering calculations to Spark\newline
+                                    * optimization of SQL queries\newline
+                                    * business features implementation\newline
+                                    * consulting on best practices, design patterns, algorithms, idioms, workflow management, etc\newline
+                                    * code review\newline
 
-	Dec 2015 -				&	Scientific Programmer \\
-	May 2016				&	\textbf{Navmii}, Saint-Petersburg,
-								\href{www.navmii.com}{www.navmii.com} \\
-	\textcolor{gray}
-	{6 months}
-							&	\footnotesize{
-									Researches of the neural network models and ML algorithms for the classification of road signs and cars, based on the real-time visual content.\newline
-									* Developing ML algorithms.\newline
-									* Analysing ML algorithms working results.\newline
-									* Reporting researches and results points.\newline
-									* Proposing the new approaches to try.\newline
-									* Improving and optimising algorithms and data sets.\newline\newline
-									ETL, feature selection, feature engineering, developing and implementation of ML
-									algorithms.\newline
-									Developed several utilities on python for data preprocessing (adding noise,
-									statistics collection, visualization, etc).\newline
-								} \\
+                                    Proposed and encouraged to introduce: release management, git-flow, keeping a changelog, python projects best practices, etc.\newline
 
-	\multicolumn{2}{c}{}\\	
+                                    Stack: python3, PySpark, ClickHouse, PostgreSQL, git
+                                } \\
 
-	Aug - Dec 2015			&	Python Developer\\
-	\textcolor{gray}
-	{5 months}		
-							&	\textbf{Тензор, ООО}, Yaroslavl,
-								\href{www.tensor.ru}{www.tensor.ru} \\
-							&	\footnotesize{
-									Taked a participation in buidling a complicated distributed system for the interaction of business processes, documents and business participants through a one communication network.\newline\newline
-									Taked a participation in designing and development of a subsystem of user
-									notifications via various channels (e.g. sms, email, push).\newline
-									* implemented and refactored backend (C++, PostgreSQL, Python)\newline
-									* optimized database structure;\newline
-									* support of messages transformation algorithms (xslt);\newline
-									* frontend logic support (JS);\newline
-									* provided system support.\newline
-								} \\
-	
-	\multicolumn{2}{c}{}\\
+\multicolumn{2}{c}{}\\\\
 
-	Jan - Mar 2013			&	Erlang Intern \\
-	\textcolor{gray}
-	{3 months}
-							&	\textbf{LiveTex}, Saint-Petersburg,
-								\href{www.livetex.ru}{www.livetex.ru} \\
-							& 	\footnotesize{
-									Implemented unit tests for the SIP protocol messaging module. Detection and covering non-trivial cases.
-								} \\
+    Jun 2016 -              &   \textbf{Python Developer} \\
+    Aug 2018                &   \textbf{Luxoft}, Saint-Petersburg,
+                                \href{www.luxoft.com}{www.luxoft.com} \\
+    \textcolor{gray}
+    {2 yrs 3 mos}   
+                            &   \footnotesize{
+
+                                    \textbf{AUTOMOTIVE project}\newline
+                                    Hot 3 weeks long project.\newline
+                                    Customer wanted to simulate data in two different formats: one which recieved from emulation device and second which emulates annotator.\newline
+                                    Solution was in applying agent-based road traffic simulation system and serializing it in two different ways.\newline
+                                    
+                                    Responsibilities:\newline
+                                    * requirements analysis\newline
+                                    * conceptual design of agent-based modeling: agent types, movement rules, agents interaction\newline
+                                    * architecture design\newline
+                                    * leading 2 developers\newline
+                                    * refactoring\newline
+                                    * release management\newline
+                                    
+                                    Stack: python3.6, numpy, lxml\newline\newline
+                                    
+                                    \textbf{LOEWE. project}\newline
+                                    Leading a small project team (3 developers, 1 QA).\newline
+                                    Managing a project for the test automation framework development.\newline
+                                    Communication with the customer, scrum planning.\newline
+                                    Building a complicated distributed system: researches, implementation.\newline
+                                    
+                                    Redesigned existing solution:\newline
+                                    * reworked the system architecture;\newline
+                                    * optimized test algorithms;\newline
+                                    * integrated best deploying practices;\newline
+                                    * migrated from SVN to Git;\newline
+                                    * set up the development infrastructure and VCS usage best practises.\newline
+                                    
+                                    Stack: Python3.5, Django, DRF, Celery, RabbitMQ/Redis, PostgreSQL, bash, Ubuntu16+, Docker, Git, SVN.\newline
+                                } \\
+
+    \multicolumn{2}{c}{}\\
+    \pagebreak
+    \noindent
+
+    Dec 2015 -              &   \textbf{Scientific Programmer} \\
+    May 2016                &   \textbf{Navmii}, Saint-Petersburg,
+                                \href{www.navmii.com}{www.navmii.com} \\
+    \textcolor{gray}
+    {6 mos}
+                            &   \footnotesize{
+
+                                    Researches of the neural network models and ML algorithms for the classification of road signs and cars, based on the real-time visual content.\newline
+                                    * Developing ML algorithms.\newline
+                                    * Analysing ML algorithms working results.\newline
+                                    * Reporting researches and results points.\newline
+                                    * Proposing the new approaches to try.\newline
+                                    * Improving and optimising algorithms and data sets.\newline
+
+                                    ETL, feature selection, feature engineering, developing and implementation of ML
+                                    algorithms.\newline
+                                    Developed several utilities on python for data preprocessing (adding noise,
+                                    statistics collection, visualization, etc).\newline
+
+                                    Stack: python3, lua, OpenCV, Torch, git.
+                                } \\
+
+    \multicolumn{2}{c}{}\\\\
+    
+    Aug -                   &   \textbf{Python Developer}\\
+    Dec 2015                &   \textbf{Тензор, ООО}, Yaroslavl,
+                                \href{www.tensor.ru}{www.tensor.ru} \\
+    \textcolor{gray}
+    {5 mos} 
+                            &   \footnotesize{
+
+                                    Taked a participation in buidling a complicated distributed system for the interaction of business processes, documents and business participants through a one communication network.\newline\newline
+                                    Taked a participation in designing and development of a subsystem of user
+                                    notifications via various channels (e.g. sms, email, push).\newline
+                                    * implemented and refactored backend (C++, PostgreSQL, Python)\newline
+                                    * optimized database structure;\newline
+                                    * support of messages transformation algorithms (xslt);\newline
+                                    * frontend logic support (JS);\newline
+                                    * provided system support.\newline
+
+                                    Stack: python3, C++, PostgreSQL, git.
+                                } \\
+    
+    \multicolumn{2}{c}{}\\\\
+
+    Jan -                   &   \textbf{Erlang Intern} \\
+    Mar 2013                &   \textbf{LiveTex}, Saint-Petersburg,
+                                \href{www.livetex.ru}{www.livetex.ru} \\
+    \textcolor{gray}
+    {3 mos}
+                            &   \footnotesize{
+
+                                    Implemented unit tests for the SIP protocol messaging module. Detection and covering non-trivial cases.
+                                }
+
 \end{tabularx}
-
-
-%------------------- LANGUAGES -------------------
-\section{Languages}
-\begin{tabular}{ll|l}
-	Russian:				& \multicolumn{2}{l}{Mothertongue} \\
-	English\footnotemark :	& Listening				& C1 \\
-							& Reading				& C1 \\
-							& Spoken interaction	& B1 \\
-							& Spoken production		& B1 \\
-							& Writing				& B1 \\
-	
-\end{tabular}
-\footnotetext{Self-assessment. Common European Framework of Reference(CEF) level}
 
 
 %------------------- EDUCATION -------------------
 \section{Education}
-\begin{tabularx}{\textwidth}{lX}
-	June, 2018:		& Master, \textbf{ITMO University}, Saint-Petersburg \\
-					& Major:  High Performance Computing \\
+\begin{tabular}{ll}
+    June, 2018:     & Master, \textbf{ITMO University}, Saint-Petersburg \\
+                    & Major:  High Performance Computing \\
 
-	\multicolumn{2}{c}{}\\
+    \multicolumn{2}{c}{}\\
 
-	June, 2015:		& Specialists, \textbf{ITMO University}, Saint-Petersburg \\
-					& Major:  Information Systems and Technologies
-\end{tabularx}
+    June, 2015:     & Specialist, \textbf{ITMO University}, Saint-Petersburg \\
+                    & Major:  Information Systems and Technologies
+\end{tabular}
 
-
-%------------------- PERSONAL DETAILS -------------------
-\section{Personal Details}
-\begin{tabularx}{\textwidth}{l} % :<
-Purposeful, hardworking, curious. I prefer to work taking care of my code and keeping it clean.\\
-A python developer, also familiar and working with: с++, bash, lua, js, sql.\\
-I like the following principles: Unix way, The Zen of Python, ABC, KISS.\\
-An advanced user of linux-systems. (not having deep knowledge, but can gladly solve a problem \\if having enough time).\\
-Having an experience in ML/DL/CV/Agent Modeling.\\
-\\
-Github profile: \href{https://github.com/cjcjcj}{github.com/cjcjcj} 
-\end{tabularx}
+%------------------- LANGUAGES -------------------
+\section{Languages}
+\begin{tabular}{ll|l}
+    Russian:                & \multicolumn{2}{l}{Native} \\
+    English\footnotemark :  & Listening             & C1 \\
+                            & Reading               & C1 \\
+                            & Spoken interaction    & B1 \\
+                            & Spoken production     & B1 \\
+                            & Writing               & B1 \\
+    
+\end{tabular}
+\footnotetext{Self-assessment. Common European Framework of Reference(CEF) level}
 
 \end{document}
